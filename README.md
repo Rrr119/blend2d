@@ -40,6 +40,7 @@ Documentation
 -------------
 
   * [Documentation Index](https://blend2d.com/doc/index.html)
+  * [Image Filters](./docs/image_filters.md) - Gaussian/box blur, drop shadows, and inner shadows
 
 Contributing Guidelines
 -----------------------

@@ -151,6 +151,13 @@ set(BLEND2D_SRC_LIST
   blend2d/core/image.cpp
   blend2d/core/image_test.cpp
   blend2d/core/image.h
+  blend2d/core/imagefilter.cpp
+  blend2d/core/imagefilter.h
+  blend2d/core/imagefilter_p.h
+  blend2d/core/imagefilter_avx2.cpp
+  blend2d/core/imagefilter_scalar.cpp
+  blend2d/core/imagefilter_sse2.cpp
+  blend2d/core/imagefilter_test.cpp
   blend2d/core/image_p.h
   blend2d/core/imagecodec.cpp
   blend2d/core/imagecodec_test.cpp
@@ -1096,6 +1103,13 @@ if (BLEND2D_TEST)
   # Standalone benchmarks.
   blend2d_add_target(bl_bench_outline_decoder EXECUTABLE
     SOURCES    blend2d-testing/bench/bl_bench_outline_decoder.cpp
+    LIBRARIES  blend2d::blend2d
+    CFLAGS     ${BLEND2D_PRIVATE_CFLAGS}
+    CFLAGS_DBG ${BLEND2D_PRIVATE_CFLAGS_DBG}
+    CFLAGS_REL ${BLEND2D_PRIVATE_CFLAGS_REL})
+
+  blend2d_add_target(bl_bench_image_filter EXECUTABLE
+    SOURCES    blend2d-testing/bench/bl_bench_image_filter.cpp
     LIBRARIES  blend2d::blend2d
     CFLAGS     ${BLEND2D_PRIVATE_CFLAGS}
     CFLAGS_DBG ${BLEND2D_PRIVATE_CFLAGS_DBG}

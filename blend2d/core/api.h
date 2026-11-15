@@ -198,6 +198,12 @@
 //!     - \ref BLImageInfo - image information data
 //!     - \ref BLImageInfoFlags - image information flags
 //!     - \ref BLImageScaleFilter - image scaling filters
+//!     - \ref BLImageFilter - image blur and shadow filters
+//!     - \ref BLBlurOptions - Gaussian and box blur options
+//!     - \ref BLShadowOptions - drop and inner shadow options
+//!     - \ref BLShadowType - shadow type
+//!     - \ref BLBlurFlags - blur flags
+//!     - \ref BLShadowFlags - shadow flags
 //!
 //! ### Image Codecs
 //!
@@ -958,6 +964,8 @@ BL_FORWARD_DECLARE_STRUCT(BLPathView);
 
 BL_FORWARD_DECLARE_STRUCT(BLImageData);
 BL_FORWARD_DECLARE_STRUCT(BLImageInfo);
+BL_FORWARD_DECLARE_STRUCT(BLBlurOptions);
+BL_FORWARD_DECLARE_STRUCT(BLShadowOptions);
 
 BL_FORWARD_DECLARE_STRUCT(BLImageCore);
 BL_FORWARD_DECLARE_STRUCT(BLImageImpl);

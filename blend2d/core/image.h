@@ -506,6 +506,25 @@ public:
   static BL_INLINE_NODEBUG BLResult scale(BLImage& dst, const BLImage& src, const BLSizeI& size, BLImageScaleFilter filter) noexcept {
     return bl_image_scale(&dst, &src, &size, filter);
   }
+
+  //! Applies an exact separable Gaussian blur to `src` and writes the result to `dst`.
+  static BL_API BLResult gaussian_blur(BLImage& dst, const BLImage& src, double radius, double sigma = 0.0) noexcept;
+
+  //! Applies a fast three-pass box approximation of a Gaussian blur to `src` and writes the result to `dst`.
+  static BL_API BLResult gaussian_blur_approx(BLImage& dst, const BLImage& src, double radius, double sigma = 0.0) noexcept;
+
+  //! Applies a box blur to `src` and writes the result to `dst`.
+  static BL_API BLResult box_blur(BLImage& dst, const BLImage& src, int radius, uint32_t passes = 1) noexcept;
+
+  //! Applies a drop shadow to `src` and writes the composited result to `dst`.
+  static BL_API BLResult drop_shadow(
+    BLImage& dst, const BLImage& src, const BLPoint& offset, double blur_radius, double blur_sigma,
+    const BLRgba32& color, uint32_t flags = 0u) noexcept;
+
+  //! Applies an inner shadow to `src` and writes the composited result to `dst`.
+  static BL_API BLResult inner_shadow(
+    BLImage& dst, const BLImage& src, const BLPoint& offset, double blur_radius, double blur_sigma,
+    const BLRgba32& color, uint32_t flags = 0u) noexcept;
 };
 
 #endif

@@ -62,6 +62,7 @@
 #include <blend2d/core/glyphrun.h>
 #include <blend2d/core/gradient.h>
 #include <blend2d/core/image.h>
+#include <blend2d/core/imagefilter.h>
 #include <blend2d/core/imagecodec.h>
 #include <blend2d/core/imagedecoder.h>
 #include <blend2d/core/imageencoder.h>
